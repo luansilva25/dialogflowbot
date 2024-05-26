@@ -18,7 +18,14 @@ app.post('/webhook', (req, res) =>{
 const porta = process.env.PORT || 3000
 const hostname = "127.0.0.1"
 
-app.listen(`o servidor esta rodando na porta https://${hostname}:${porta}`)
+app.listen((err) =>{
+    if(err){
+        console.log('ocorreu algum erro')
+    }
+    else {
+        console.log(`o servidor esta rodando na porta: ${porta}`)
+    }
+})
 
 
 
